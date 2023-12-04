@@ -1,23 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: second-app-deployment
+  name: story-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: second-app
-
+      app: story
 
   template:
     metadata:
       labels:
-        app: second-app
-
+        app: story
 
     spec:
       containers:
-      - name: second-node
-        image: slobodang/kub-first-app:latest
-
-
+        - name: story-app
+          image: slobodang/kub-data-demo
