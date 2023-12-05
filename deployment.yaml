@@ -16,4 +16,17 @@ spec:
     spec:
       containers:
         - name: story-app
-          image: slobodang/kub-data-demo
+          image: slobodang/kub-data-demo:1
+          volumeMounts: 
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
+          # volumeMounts:
+          #   - mountPath: /app
+          #     name: story-volume
+          # volumes:
+          #   - name: story-volume
+          #     emptyDir:
+          #       sizeLimit: 500Mi
